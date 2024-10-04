@@ -19,4 +19,18 @@ setup.addEventListener('click', () => {
         div.style.cssText = `width: calc(100% / ${x}); padding-bottom: calc(100%/${x})`
         container.appendChild(div)
         }
-    }}})
+    }}
+    const boxs = document.querySelectorAll('.grid')
+    boxs.forEach((box) => {
+    box.addEventListener('mouseover', () => {
+        const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+        box.style['background-color'] = randomColor
+    })
+})
+    boxs.forEach((box) => {
+        box.addEventListener('mouseout', () => {
+            box.style['background-color'] = 'white'
+        })
+    })
+
+})
